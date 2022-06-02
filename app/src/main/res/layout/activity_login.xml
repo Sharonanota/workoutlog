@@ -32,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
+            android:background="@android:color/transparent"
             android:inputType="textEmailAddress"
             android:textAlignment="textStart"
             android:textColorHint="#0B0B0B" />
@@ -54,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
+            android:background="@android:color/transparent"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,11 +72,16 @@
 
     <TextView
         android:id="@+id/tvSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="154dp"
+        android:layout_height="31dp"
         android:layout_marginTop="35dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="#615A5A"
+        android:fontFamily="sans-serif"
+        android:hint="Don't have an account?Signup"
         android:text="@string/signup"
-        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogIn" />

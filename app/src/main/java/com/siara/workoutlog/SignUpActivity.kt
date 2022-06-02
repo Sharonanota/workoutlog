@@ -50,18 +50,22 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
     fun validate (){
+        var error=false
         var email = etEmail.text.toString()
         var password = etPassword.text.toString()
         var Confirm = etConfirm.text.toString()
 
         if (email.isBlank()){
             tilEmail.error= "email Required"
+            error=true
         }
         if (password.isBlank()){
             tilPassword.error="email Required"
+            error=true
         }
         if (Confirm.isBlank()){
             tilConfirm.error="Confirmation error"
+            error=true
         }
     }
 
