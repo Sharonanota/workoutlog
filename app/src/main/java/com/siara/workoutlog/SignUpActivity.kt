@@ -39,10 +39,6 @@ class SignUpActivity : AppCompatActivity() {
         btnSignUp = findViewById(R.id.btnSignup)
         etLogin = findViewById(R.id.etLogin)
 
-        btnSignUp.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
-        }
 
         btnSignUp.setOnClickListener {
             validate()
@@ -64,6 +60,10 @@ class SignUpActivity : AppCompatActivity() {
             error=true
         }
         if (Confirm.isBlank()){
+            tilConfirm.error="Confirmation error"
+            error=true
+        }
+        if(password!=Confirm){
             tilConfirm.error="Confirmation error"
             error=true
         }

@@ -3,6 +3,7 @@ package com.siara.workoutlog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
@@ -18,7 +19,11 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        castView()
 
+
+    }
+    fun castView(){
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
         tilEmail = findViewById(R.id.tilEmail)
@@ -31,14 +36,20 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         btnLogin.setOnClickListener {
             validate()
+            startActivity(Intent(this, HomeActivity::class.java))
         }
     }
     fun validate (){
         var email = etEmail.text.toString()
         var error = false
         var password = etPassword.text.toString()
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            tilEmail.error = "Not a valid email adddress"
+            error = true
+        }
 
         if (email.isBlank()){
             tilEmail.error= "email Required"
@@ -48,5 +59,6 @@ class LoginActivity : AppCompatActivity() {
             tilPassword.error="email Required"
             error=true
         }
+
     }
 }
